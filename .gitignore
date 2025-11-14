@@ -1,1 +1,19 @@
+# Build artifacts
 build/
+*.so
+*.o
+*.tmp.*
+
+# Temporary test files
+/tmp/opencog_test.txt
+
+# Lua compiled files
+*.luac
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
