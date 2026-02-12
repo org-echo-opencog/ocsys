@@ -49,6 +49,20 @@ For system-wide installation, you can use LuaRocks:
 luarocks make sys-1.1-0.rockspec
 ```
 
+## Quick Start
+
+Run the example script to see the OpenCog system functions in action:
+```bash
+./example.lua
+```
+
+Or run the comprehensive test suite:
+```bash
+make test
+# or
+./test_opencog_functions.lua
+```
+
 ## Use
 
 ```lua
