@@ -43,9 +43,7 @@ static int l_usleep(lua_State *L) {
 static int l_clock(lua_State *L) {
   struct timeval tv;
   struct timezone tz;
-  struct tm *tm;
   gettimeofday(&tv, &tz);
-  tm=localtime(&tv.tv_sec);
   double precise_time = tv.tv_sec + tv.tv_usec / 1e6;
   lua_pushnumber(L,precise_time);
   return 1;
