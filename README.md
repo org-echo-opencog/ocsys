@@ -1,20 +1,66 @@
 # OpenCog Lua System Package (ocsys)
 
+[![CI](https://github.com/org-echo-opencog/ocsys/workflows/CI/badge.svg)](https://github.com/org-echo-opencog/ocsys/actions)
+
 A Lua system utilities package extended for OpenCog cognitive architecture needs.
 
 Note: some functions only work on UNIX systems.
 
 ## Dependencies
 - Lua 5.4 (or compatible version)
+- GCC or compatible C compiler
 - Standard UNIX utilities (for some functions)
+- Make (optional, for easier building)
 
-## Install
+## Build
+
+### Using Make (Recommended)
 ```bash
-# Build the native library
+# Build the library
+make
+
+# Run tests
+make test
+
+# Clean build artifacts
+make clean
+```
+
+### Manual Build
+```bash
+# Build the native library manually
 gcc -shared -fPIC -I/usr/include/lua5.4 sys.c -o libsys.so -llua5.4
 
-# Use in your project
-require 'sys'
+# Run tests
+lua5.4 test_opencog_functions.lua
+```
+
+## Install
+Currently, the package should be used from its source directory:
+```bash
+# Use in your project from the ocsys directory
+cd /path/to/ocsys
+lua5.4
+> require 'init'
+```
+
+For system-wide installation, you can use LuaRocks:
+```bash
+luarocks make sys-1.1-0.rockspec
+```
+
+## Quick Start
+
+Run the example script to see the OpenCog system functions in action:
+```bash
+./example.lua
+```
+
+Or run the comprehensive test suite:
+```bash
+make test
+# or
+./test_opencog_functions.lua
 ```
 
 ## Use
